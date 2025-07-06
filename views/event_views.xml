@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_tradingview_event_tree" model="ir.ui.view">
+        <field name="name">tradingview.event.tree</field>
+        <field name="model">tradingview.event</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title"/>
+                <field name="country"/>
+                <field name="importance"/>
+                <field name="event_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_tradingview_event_form" model="ir.ui.view">
+        <field name="name">tradingview.event.form</field>
+        <field name="model">tradingview.event</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="title"/>
+                        <field name="description"/>
+                        <field name="country"/>
+                        <field name="importance"/>
+                        <field name="event_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_tradingview_event" model="ir.actions.act_window">
+        <field name="name">Economic Events</field>
+        <field name="res_model">tradingview.event</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tradingview_event" name="Economic Events"
+              parent="menu_tradingview_root" action="action_tradingview_event"/>
+</odoo>

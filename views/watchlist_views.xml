@@ -1,0 +1,38 @@
+<odoo>
+    <record id="view_tradingview_watchlist_tree" model="ir.ui.view">
+        <field name="name">tradingview.watchlist.tree</field>
+        <field name="model">tradingview.watchlist</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="symbol_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_tradingview_watchlist_form" model="ir.ui.view">
+        <field name="name">tradingview.watchlist.form</field>
+        <field name="model">tradingview.watchlist</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="user_id"/>
+                        <field name="symbol_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_tradingview_watchlist" model="ir.actions.act_window">
+        <field name="name">Watchlists</field>
+        <field name="res_model">tradingview.watchlist</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tradingview_watchlist" name="Watchlists"
+              parent="menu_tradingview_root" action="action_tradingview_watchlist"/>
+</odoo>

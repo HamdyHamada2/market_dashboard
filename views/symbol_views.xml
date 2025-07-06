@@ -1,0 +1,48 @@
+<odoo>
+    <record id="view_tradingview_symbol_tree" model="ir.ui.view">
+        <field name="name">tradingview.symbol.tree</field>
+        <field name="model">tradingview.symbol</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="symbol"/>
+                <field name="name"/>
+                <field name="type"/>
+                <field name="exchange"/>
+                <field name="current_price"/>
+                <field name="daily_change"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_tradingview_symbol_form" model="ir.ui.view">
+        <field name="name">tradingview.symbol.form</field>
+        <field name="model">tradingview.symbol</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="symbol"/>
+                        <field name="name"/>
+                        <field name="type"/>
+                        <field name="exchange"/>
+                        <field name="region"/>
+                        <field name="currency"/>
+                        <field name="sector"/>
+                        <field name="industry"/>
+                        <field name="isin"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_tradingview_symbol" model="ir.actions.act_window">
+        <field name="name">Symbols</field>
+        <field name="res_model">tradingview.symbol</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tradingview_root" name="TradingView"/>
+    <menuitem id="menu_tradingview_symbols" name="Symbols" parent="menu_tradingview_root" action="action_tradingview_symbol"/>
+</odoo>

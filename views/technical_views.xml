@@ -1,0 +1,40 @@
+<odoo>
+    <record id="view_tradingview_technical_tree" model="ir.ui.view">
+        <field name="name">tradingview.technical.tree</field>
+        <field name="model">tradingview.technical</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="symbol_id"/>
+                <field name="indicator"/>
+                <field name="value"/>
+                <field name="timestamp"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_tradingview_technical_form" model="ir.ui.view">
+        <field name="name">tradingview.technical.form</field>
+        <field name="model">tradingview.technical</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="symbol_id"/>
+                        <field name="indicator"/>
+                        <field name="value"/>
+                        <field name="timestamp"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_tradingview_technical" model="ir.actions.act_window">
+        <field name="name">Technical Indicators</field>
+        <field name="res_model">tradingview.technical</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tradingview_technical" name="Technical Indicators"
+              parent="menu_tradingview_root" action="action_tradingview_technical"/>
+</odoo>

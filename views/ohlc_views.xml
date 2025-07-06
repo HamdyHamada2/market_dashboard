@@ -1,0 +1,50 @@
+<odoo>
+    <record id="view_tradingview_ohlc_tree" model="ir.ui.view">
+        <field name="name">tradingview.ohlc.tree</field>
+        <field name="model">tradingview.ohlc</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="symbol_id"/>
+                <field name="timestamp"/>
+                <field name="open"/>
+                <field name="high"/>
+                <field name="low"/>
+                <field name="close"/>
+                <field name="volume"/>
+                <field name="interval"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_tradingview_ohlc_form" model="ir.ui.view">
+        <field name="name">tradingview.ohlc.form</field>
+        <field name="model">tradingview.ohlc</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="symbol_id"/>
+                        <field name="timestamp"/>
+                        <field name="interval"/>
+                    </group>
+                    <group>
+                        <field name="open"/>
+                        <field name="high"/>
+                        <field name="low"/>
+                        <field name="close"/>
+                        <field name="volume"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_tradingview_ohlc" model="ir.actions.act_window">
+        <field name="name">OHLC Data</field>
+        <field name="res_model">tradingview.ohlc</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tradingview_ohlc" name="OHLC Data"
+              parent="menu_tradingview_root" action="action_tradingview_ohlc"/>
+</odoo>

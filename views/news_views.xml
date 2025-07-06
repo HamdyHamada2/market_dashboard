@@ -1,0 +1,42 @@
+<odoo>
+    <record id="view_tradingview_news_tree" model="ir.ui.view">
+        <field name="name">tradingview.news.tree</field>
+        <field name="model">tradingview.news</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="symbol_id"/>
+                <field name="title"/>
+                <field name="source"/>
+                <field name="published_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_tradingview_news_form" model="ir.ui.view">
+        <field name="name">tradingview.news.form</field>
+        <field name="model">tradingview.news</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="symbol_id"/>
+                        <field name="title"/>
+                        <field name="summary"/>
+                        <field name="source"/>
+                        <field name="url"/>
+                        <field name="published_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_tradingview_news" model="ir.actions.act_window">
+        <field name="name">Market News</field>
+        <field name="res_model">tradingview.news</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_tradingview_news" name="Market News"
+              parent="menu_tradingview_root" action="action_tradingview_news"/>
+</odoo>

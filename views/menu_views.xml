@@ -1,0 +1,14 @@
+<odoo>
+  <record id="action_tradingview_symbol" model="ir.actions.act_window">
+    <field name="name">Symbols</field>
+    <field name="res_model">tradingview.symbol</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+
+  <menuitem id="menu_tradingview_root" name="TradingView" sequence="10"/>
+  
+  <menuitem id="menu_tradingview_symbol" name="Symbols"
+            parent="menu_tradingview_root"
+            action="action_tradingview_symbol"
+            sequence="1"/>
+</odoo>
