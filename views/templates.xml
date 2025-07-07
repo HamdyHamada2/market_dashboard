@@ -58,52 +58,17 @@
                     </div>
                 </div>
                 
-                <!-- مكان الرسم البياني -->
+                <!-- رسم بياني للرسم البياني -->
                 <div class="row">
                     <div class="col-md-12">
-                        <div id="tradingview_chart" style="height: 500px; background: #f8f9fa;">
+                        <div class="trading-chart-container"
+                             t-att-data-symbol="symbol.symbol"
+                             t-att-data-chart="<t t-esc="ohlc_data_json"/>">
                             <p class="text-center py-5">جارٍ تحميل الرسم البياني...</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- سكريبت الرسم البياني -->
-            <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    const chartData = [
-                        <t t-foreach="ohlc_data" t-as="ohlc">
-                        {
-                            time: <t t-esc="int(ohlc.timestamp.timestamp())"/>,
-                            open: <t t-esc="ohlc.open"/>,
-                            high: <t t-esc="ohlc.high"/>,
-                            low: <t t-esc="ohlc.low"/>,
-                            close: <t t-esc="ohlc.close"/>
-                        },
-                        </t>
-                    ];
-
-                    const chart = LightweightCharts.createChart(
-                        document.getElementById('tradingview_chart'), 
-                        {
-                            width: document.getElementById('tradingview_chart').clientWidth,
-                            height: 500,
-                            layout: {
-                                backgroundColor: '#ffffff',
-                                textColor: '#333',
-                            },
-                            grid: {
-                                vertLines: { color: '#eee' },
-                                horzLines: { color: '#eee' },
-                            },
-                        }
-                    );
-
-                    const candleSeries = chart.addCandlestickSeries();
-                    candleSeries.setData(chartData);
-                });
-            </script>
         </t>
     </template>
 

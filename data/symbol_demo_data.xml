@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Apple -->
+    <record id="symbol_apple" model="tradingview.symbol">
+        <field name="name">Apple Inc.</field>
+        <field name="symbol">AAPL</field>
+        <field name="exchange">NASDAQ</field>
+        <field name="region">US</field>
+        <field name="currency">USD</field>
+        <field name="type">stock</field>
+        <field name="active">True</field>
+    </record>
+
+    <!-- Bitcoin -->
+    <record id="symbol_btc" model="tradingview.symbol">
+        <field name="name">Bitcoin</field>
+        <field name="symbol">BTCUSD</field>
+        <field name="exchange">Binance</field>
+        <field name="region">Global</field>
+        <field name="currency">USD</field>
+        <field name="type">crypto</field>
+        <field name="active">True</field>
+    </record>
+
+    <!-- Tesla -->
+    <record id="symbol_tsla" model="tradingview.symbol">
+        <field name="name">Tesla Inc.</field>
+        <field name="symbol">TSLA</field>
+        <field name="exchange">NASDAQ</field>
+        <field name="region">US</field>
+        <field name="currency">USD</field>
+        <field name="type">stock</field>
+        <field name="active">True</field>
+    </record>
+</odoo>

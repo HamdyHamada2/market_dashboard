@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Symbol Rules -->
+    <record id="rule_symbol_user_read" model="ir.rule">
+        <field name="name">Symbol: User Read</field>
+        <field name="model_id" ref="model_tradingview_symbol"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+    </record>
+
+    <!-- OHLC Rules -->
+    <record id="rule_ohlc_user_read" model="ir.rule">
+        <field name="name">OHLC: User Read</field>
+        <field name="model_id" ref="model_tradingview_ohlc"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+    </record>
+
+    <!-- News Rules -->
+    <record id="rule_news_user_read" model="ir.rule">
+        <field name="name">News: User Read</field>
+        <field name="model_id" ref="model_tradingview_news"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+    </record>
+
+    <!-- Event Rules -->
+    <record id="rule_event_user_read" model="ir.rule">
+        <field name="name">Event: User Read</field>
+        <field name="model_id" ref="model_tradingview_event"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+    </record>
+
+    <!-- Technical Indicator Rules -->
+    <record id="rule_technical_user_read" model="ir.rule">
+        <field name="name">Technical: User Read</field>
+        <field name="model_id" ref="model_tradingview_technical"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+    </record>
+
+    <!-- Watchlist Rules -->
+    <record id="rule_watchlist_user_read" model="ir.rule">
+        <field name="name">Watchlist: User Read</field>
+        <field name="model_id" ref="model_tradingview_watchlist"/>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+    </record>
+</odoo>
