@@ -31,6 +31,12 @@
         'views/event_views.xml',
         'views/watchlist_views.xml',
         'views/templates.xml',
+            
+    ],
+    'qweb': [
+        'static/src/xml/charting_template.xml',
+        'static/src/xml/symbol_detail_template.xml',
+        'static/src/xml/market_explorer_template.xml',
     ],
     'assets': {
         'web.assets_frontend': [

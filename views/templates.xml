@@ -1,36 +1,6 @@
-<odoo>
-    <template id="market_explorer" name="Market Explorer">
-        <t t-call="website.layout">
-            <div class="container mt-4">
-                <h1>Market Explorer</h1>
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Symbol</th>
-                            <th>Name</th>
-                            <th>Exchange</th>
-                            <th>Price</th>
-                            <th>Change</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="symbols" t-as="symbol">
-                            <tr>
-                                <td><a t-att-href="'/market/' + symbol.slug"><t t-esc="symbol.symbol"/></a></td>
-                                <td><t t-esc="symbol.name"/></td>
-                                <td><t t-esc="symbol.exchange"/></td>
-                                <td><t t-esc="symbol.current_price"/></td>
-                                <td><t t-esc="symbol.daily_change"/>%</td>
-                            </tr>
-                        </t>
-                    </tbody>
-                </table>
-            </div>
-        </t>
-    </template>
-</odoo>
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
     <!-- قالب صفحة اكتشاف السوق -->
     <template id="market_explorer" name="Market Explorer">
         <t t-call="website.layout">
@@ -53,7 +23,7 @@
                                 <td><t t-esc="symbol.name"/></td>
                                 <td><t t-esc="symbol.exchange"/></td>
                                 <td><t t-esc="symbol.current_price"/></td>
-                                <td t-att-class="'text-success' if symbol.daily_change >=0 else 'text-danger'">
+                                <td t-att-class="'text-success' if symbol.daily_change >= 0 else 'text-danger'">
                                     <t t-esc="symbol.daily_change"/>%
                                 </td>
                             </tr>
@@ -105,11 +75,11 @@
                     const chartData = [
                         <t t-foreach="ohlc_data" t-as="ohlc">
                         {
-                            time: <t t-esc="ohlc.timestamp.timestamp()"/>,
+                            time: <t t-esc="int(ohlc.timestamp.timestamp())"/>,
                             open: <t t-esc="ohlc.open"/>,
                             high: <t t-esc="ohlc.high"/>,
                             low: <t t-esc="ohlc.low"/>,
-                            close: <t t-esc="ohlc.close"/>,
+                            close: <t t-esc="ohlc.close"/>
                         },
                         </t>
                     ];
@@ -136,4 +106,5 @@
             </script>
         </t>
     </template>
+
 </odoo>
